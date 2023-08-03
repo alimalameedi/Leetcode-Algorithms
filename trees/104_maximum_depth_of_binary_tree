@@ -1,0 +1,26 @@
+# Definition for a binary tree node.
+from typing import Optional
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+
+        # Solution 1
+        # Time Complexity: O(n) - n being the number of nodes in the tree
+        # Space Complexity: O(1)
+        # Notes: Use main function itself to perform recursion and traverse the tree.
+        #        As we traverse each level, we add 1 to our running count of depth.
+        #        We also want to get the max between both sides as we go, so we get the max
+        #        depth.
+
+        if not root:
+            return 0
+
+        return max(1 + self.maxDepth(root.left), 1 + self.maxDepth(root.right))
