@@ -1,7 +1,9 @@
+
+
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
 
-        # Solution 1:
+        # Solution 1
         # Time Complexity: O(n)
         # Space Complexity: O(n)
 

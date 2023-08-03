@@ -4,7 +4,7 @@ from typing import List
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
 
-        # Solution 1:
+        # Solution 1
         # Time Complexity: O(n)
         # Space Complexity: O(n)
 
