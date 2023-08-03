@@ -5,8 +5,8 @@ class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
 
         # Solution 1:
-        # Time: O(n)
-        # Space: O(n)
+        # Time Complexity: O(n)
+        # Space Complexity: O(n)
 
         storage = {}
 
