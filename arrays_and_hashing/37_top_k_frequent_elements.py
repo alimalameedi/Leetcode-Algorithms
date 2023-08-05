@@ -11,8 +11,8 @@ class Solution:
         # in worst case (each number appears once)
 
         # Notes: Use a min heap to get the largest value by putting [val, -freq] in our heap.
-        #           heappop(heap)
-        #           heappush(heap, [val, -freq]
+        #           heappop(heap) = log(n) operation
+        #           heappush(heap, [val, -freq]) = log(n) operation
         #           Make an ordinary array and use above operations.
         # Undo negative to get the actual frequency for a value.
 
