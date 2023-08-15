@@ -10,8 +10,9 @@ class Solution:
 
         # Solution 1:
 
-        # Time Complexity:
-        # Space Complexity:
+        # Time Complexity: O(1) since we are only ever going to have a 9x9 board.
+        # Space Complexity: O(1) since we only ever have 81 iterations/values max to be stored or looked at.
+        # If we were having 'n' input or board sizes, this would turn to O(N) for both operations.
 
         rows = {}
         columns = {}
@@ -26,23 +27,23 @@ class Solution:
                     continue
 
                 # if the row has been registered in our map, check if the value on the board has already been used
-                # in that row. If not, append it to that row since we've seen it now.
+                # in that row. If not, add to that row since we've seen it now.
                 if i in rows:
                     if board[i][j] in rows[i]:
                         return False
-                    rows[i].append(board[i][j])
+                    rows[i][board[i][j]] = 1
 
                 # if the row was not added yet, we add the current value to the array (setup)
                 else:
-                    rows[i] = [board[i][j]]
+                    rows[i] = {board[i][j]: 1}
 
                 # same explanation as above
                 if j in columns:
                     if board[i][j] in columns[j]:
                         return False
-                    columns[j].append(board[i][j])
+                    columns[j][board[i][j]] = 1
                 else:
-                    columns[j] = [board[i][j]]
+                    columns[j] = {board[i][j]: 1}
 
                 # same explanation as above
                 # every number in a 3x3 box falls into floor division of (i // 3, j // 3)
@@ -50,9 +51,8 @@ class Solution:
 
                     if board[i][j] in boxes[(i // 3, j // 3)]:
                         return False
-                    boxes[(i // 3, j // 3)].append(board[i][j])
+                    boxes[(i // 3, j // 3)][board[i][j]] = 1
                 else:
-                    boxes[(i // 3, j // 3)] = [board[i][j]]
+                    boxes[(i // 3, j // 3)] = {board[i][j]: 1}
 
         return True
-
